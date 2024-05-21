@@ -1,8 +1,10 @@
 import psycopg2
-from config import load_config
+
+from db.config import load_config
+
 
 def create_tables():
-    """ Create tables in the PostgreSQL database"""
+    """Create tables in the PostgreSQL database"""
     commands = [
         "CREATE TABLE log (timestamp TIMESTAMP PRIMARY KEY DEFAULT NOW(), odometer INTEGER NOT NULL, liter FLOAT NOT NULL, price FLOAT NOT NULL)"
     ]
@@ -16,5 +18,6 @@ def create_tables():
     except (psycopg2.DatabaseError, Exception) as error:
         print(error)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     create_tables()
