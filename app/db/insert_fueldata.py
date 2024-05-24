@@ -1,6 +1,6 @@
 import psycopg2
 
-from db.config import load_config
+from app.db.config.config import load_config
 
 
 def insert_fuellog(log):

@@ -1,7 +1,7 @@
 from flask import Flask, request
 
-from db.get_fueldata import get_fuellogs
-from db.insert_fueldata import insert_fuellog
+from app.db.get_fueldata import get_fuellogs
+from app.db.insert_fueldata import insert_fuellog
 
 app = Flask(__name__)
 
@@ -17,4 +17,4 @@ def insert_log():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

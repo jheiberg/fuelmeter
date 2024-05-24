@@ -1,6 +1,6 @@
 import psycopg2
 
-from db.config import load_config
+from app.db.config.config import load_config
 
 
 def get_fuellogs():
@@ -32,4 +32,4 @@ def get_fuellogs():
 
 
 if __name__ == "__main__":
-    get_fueldata()
+    get_fuellogs()

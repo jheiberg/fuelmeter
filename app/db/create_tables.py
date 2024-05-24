@@ -1,6 +1,5 @@
 import psycopg2
-
-from db.config import load_config
+from app.db.config.config import load_config
 
 
 def create_tables():
@@ -15,9 +14,11 @@ def create_tables():
                 # execute the CREATE TABLE statement
                 for command in commands:
                     cur.execute(command)
+
     except (psycopg2.DatabaseError, Exception) as error:
         print(error)
 
 
 if __name__ == "__main__":
-    create_tables()
+    import app
+    app.db.create_tables.create_tables()

@@ -1,11 +1,15 @@
 from configparser import ConfigParser
+import os
 
 
 def load_config(
-    filename="/home/jako/Development/fuelmeter/db/database.ini", section="postgresql"
+    filename="database.ini",
+    section="postgresql",
 ):
+    ini_path = os.path.realpath(os.path.dirname(__file__))
+
     parser = ConfigParser()
-    parser.read(filename)
+    parser.read(ini_path + "/" + filename)
 
     # get section, default to postgresql
     config = {}
